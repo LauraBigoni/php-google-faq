@@ -71,10 +71,10 @@ $faqs = [
     ],
 ];
 
-// var_dump($faqs);
+var_dump($faqs);
 
-$faq = array_keys($faqs);
-var_dump($faq);
+$faq_keys = array_keys($faqs);
+// var_dump($faq_keys);
 
 ?>
 
@@ -89,10 +89,12 @@ var_dump($faq);
 </head>
 
 <body>
-    <?php foreach ($faq as $question) { ?>
+    <?php foreach ($faq_keys as $question) { ?>
         <section>
-            <h3><?php echo $question ?></h3>
-            <p></p>
+            <h3><?php echo $question; ?></h3>
+            <?php foreach ($question as $response) { ?>
+                <p><?php echo $response ?></p>
+            <?php } ?>
         </section>
     <?php } ?>
 </body>
