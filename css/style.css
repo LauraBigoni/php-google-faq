@@ -1,0 +1,94 @@
+/* # Generics */
+body {
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    color: #3C4043;
+}
+
+a, a:hover {
+    color: #3367D6;
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+p, li {
+    font-size: 14px;
+}
+
+li+li, ol.a {
+    padding-top: 10px;
+}
+
+header, footer {
+    color: #5F6368;
+}
+
+header {
+    border-bottom: 1px solid lightgrey;
+}
+
+i {
+    cursor: pointer;
+}
+
+header i {
+    font-size: 28px;
+}
+
+footer i {
+    color: rgb(127, 219, 255);
+}
+
+i+i {
+    color: rgb(127, 219, 255);
+    margin-left: 10px;
+}
+
+main {
+    padding-top: 50px;
+}
+
+/* # Header */
+img {
+    width: 80px;
+    height: auto;
+}
+
+span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+ul li {
+    font-weight: 500;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+ul li.active {
+    color: #3367D6;
+    border-bottom: 2px solid #3367D6;
+}
+
+/* # Footer */
+footer {
+    background-color: #F5F5F5;
+    border-top: 1px solid lightgrey;
+}
+
+footer ul li {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+footer ul li+li::before {
+    content: '•';
+    padding-right: 8px;
+}

@@ -48,13 +48,17 @@ $faqs = [
         [
             "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose: <br />" .
 
-                "La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti: <br />" .
+                "<ol>
+                <li>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:" .
 
-                "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera. <br />" .
+                "<ol type=\"a\" class=\"a\">
+                <li>Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.</li>" .
 
-                "Google LLC, con sede negli Stati Uniti, per il resto del mondo. <br />" .
+                "<li>Google LLC, con sede negli Stati Uniti, per il resto del mondo.</li>
+                </ol>" .
 
-                "La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.",
+                "<li>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</li>
+                </ol>",
 
             "Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account."
         ],
@@ -89,8 +93,7 @@ $faqs = [
     ],
 ];
 
-var_dump($faqs);
-
+// var_dump($faqs);
 ?>
 
 <!DOCTYPE html>
@@ -100,20 +103,86 @@ var_dump($faqs);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
     <title>Google FAQ</title>
 </head>
 
 <body>
-    <?php foreach ($faqs as $questions) { ?>
-        <section>
-            <?php foreach ($questions as $question) { ?>
-                <h3><?php echo $question; ?></h3>
-                <?php foreach ($question as $answer) { ?>
-                    <p><?php echo $answer ?></p>
-                <?php } ?>
-            <?php } ?>
-        </section>
-    <?php } ?>
+    <header>
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <div class="logo py-2 d-flex align-items-center" role="button">
+                        <img src="./img/logo.png" alt="google logo">
+                        <span>Privacy e termini</span>
+                    </div>
+                    <div class="user">
+                        <i class="fa-solid fa-grip-vertical"></i>
+                        <i class="fa-solid fa-face-grin-stars"></i>
+                    </div>
+                </div>
+                <div class="col-12 d-flex">
+                    <ul class="list-unstyled list-inline m-0">
+                        <li class="list-inline-item">Introduzione</li>
+                        <li class="list-inline-item">Norme sulla privacy</li>
+                        <li class="list-inline-item">Termini del servizio</li>
+                        <li class="list-inline-item">Tecnologie</li>
+                        <li class="list-inline-item active">Domande frequenti</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <?php $i = 1;
+                    foreach ($faqs as $results) { ?>
+                        <section id="<?php echo $i ?>">
+                            <h3><?php echo $results['question']; ?></h3>
+                            <?php foreach ($results['answer'] as $answer) { ?>
+                                <p><?php echo $answer ?></p>
+                            <?php } ?>
+                        </section>
+                    <?php $i++;
+                    } ?>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <div class="nav">
+                        <ul class="list-unstyled list-inline m-0">
+                            <li class="list-inline-item">Google</li>
+                            <li class="list-inline-item">Tutto su Google</li>
+                            <li class="list-inline-item">Privacy</li>
+                            <li class="list-inline-item">Termini</li>
+                        </ul>
+                    </div>
+                    <div class="language">
+                        <i class="fa-solid fa-globe"></i>
+                        <select>
+                            <option>Español</option>
+                            <option>Deutsch</option>
+                            <option>Français</option>
+                            <option>English</option>
+                            <option selected>Italiano</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
