@@ -75,6 +75,7 @@ $faqs = [
 
 $faq = array_keys($faqs);
 var_dump($faq);
+
 ?>
 
 <!DOCTYPE html>
@@ -88,7 +89,12 @@ var_dump($faq);
 </head>
 
 <body>
-
+    <?php foreach ($faq as $question) { ?>
+        <section>
+            <h3><?php echo $question ?></h3>
+            <p></p>
+        </section>
+    <?php } ?>
 </body>
 
 </html>
